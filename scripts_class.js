@@ -18,6 +18,7 @@ profile_2.print();
 
 class Work extends User {
     constructor(name, age, sex, work_2) {
+        // используем super для вызова функций пренаджлежащих родителю
         super(name, age, sex)
         this.work_2 = work_2;
     }
