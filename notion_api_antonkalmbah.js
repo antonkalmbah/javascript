@@ -1,6 +1,6 @@
-import { TOKEN } from './notion_token';
+import {TOKEN} from './notion_token.js';
 
-import { Client } from "@notionhq/client";
+import { Client } from "./node_modules/@notionhq/client";
 
 // Initializing a client
 const notion = new Client({
