@@ -13,7 +13,7 @@ const powderYell = function () {
     // Опускаем буквы
     let down = name.toLowerCase()
     console.log(up, down)
-}
+};
 
 powderYell()
 
