@@ -1,4 +1,4 @@
-const words = 'The new string code'
+const words = 'The new string code';
 const string = words.replace(/ /g, '-');
 
 console.log('Декларативный способ: ', string);
@@ -13,6 +13,7 @@ for (i = 0; i < words.length; i++) {
     } else {
         new_words += words[i];
     }
-}
+};
 
-console.log(new_words);
+// console.log(new_words);
+
