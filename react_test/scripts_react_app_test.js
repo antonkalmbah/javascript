@@ -42,7 +42,7 @@ const items = [
 // создаём список из items и добавляем его через li на страницу
 const list_elem_new = React.createElement(
     "ul",
-    { className: "items" },
+    { className: "item" },
     // для того, чтобы не было ошибки с key делаем (elem, i) и i в key
     items.map((elem, i) => React.createElement("li", { key: i }, elem))
 );
