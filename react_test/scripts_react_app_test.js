@@ -47,6 +47,6 @@ const list_elem_new = React.createElement(
     items.map((elem, i) => React.createElement("li", { key: i }, elem))
 );
 
-ReactDOM.render(list_elem_new, document.getElementById("root"));
+// ReactDOM.render(list_elem_new, document.getElementById("root"));
 
 // -------------------------------------------------------------
