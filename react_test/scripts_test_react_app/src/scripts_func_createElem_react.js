@@ -1,12 +1,9 @@
 function Image() {
-    return React.createElement(
+    return (
         "p",
         { className: "function_text" },
         "Печатаем текст из функции, используя компонент React"
     )
 };
 
-ReactDOM.render(
-    React.createElement(Image, null, null),
-    document.getElementById("root")
-);
+export default Image;
