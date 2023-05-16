@@ -5,8 +5,8 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import Image from "./scripts_func_createElem_react";
 // импорт для теста
-import Menu from './scripts_jsx_train_react';
-import data from './scripts_jsx_train_react';
+// import Menu from './scripts_jsx_train_react';
+// import data from './scripts_jsx_train_react';
 import Cat from './CatComponent';
 
 
