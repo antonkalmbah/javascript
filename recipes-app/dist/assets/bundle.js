@@ -68,7 +68,7 @@ var createArray = function createArray(length) {
 };
 function StarRating(_ref2) {
   var _ref2$totalStars = _ref2.totalStars,
-    totalStars = _ref2$totalStars === void 0 ? 0 : _ref2$totalStars;
+    totalStars = _ref2$totalStars === void 0 ? 1 : _ref2$totalStars;
   return createArray(totalStars).map(function (n, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Star, {
       key: i
