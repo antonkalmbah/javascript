@@ -9,5 +9,7 @@ module.exports = {
     module: {
         rules: [{test: /\.js$/, exclude: /node_modules/, loader: "babel-loader"}]
     },
-    mode: "development"
+    mode: "development",
+    // установка source-map для свойства devtool сообщит webpack, что вы хотите использовать сопоставление источников.
+    devtool: "source-map"
 };
