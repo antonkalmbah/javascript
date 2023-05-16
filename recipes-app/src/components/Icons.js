@@ -1,13 +1,13 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-export default function Icons() {
+export default function Icons({color = "red"}) {
     return [
-        <FaStar color="red" />,
-        <FaStar color="red" />,
-        <FaStar color="red" />,
-        <FaStar color="grey" />,
-        <FaStar color="grey" />,
-    ];
+        <FaStar color={color="blue"} />,
+        <FaStar color={color="blue"} />,
+        <FaStar color={color="blue"} />,
+        <FaStar color={color="blue"} />,
+        <FaStar color={color="blue"} />
+    ]
 }
 
