@@ -189,8 +189,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// Icons был нужен, когда кол-во звёзд было статичным
-// import Icons from "./Icons";
 // StarRating позволяет делать кол-во звёзд программируемым через атрибут totalStars в StarRating
 
 function Recipe(_ref) {

@@ -1,8 +1,6 @@
 import React from "react";
 import Instructions from "./Instructions";
 import IngredientsList from "./IngredientsList";
-// Icons был нужен, когда кол-во звёзд было статичным
-// import Icons from "./Icons";
 // StarRating позволяет делать кол-во звёзд программируемым через атрибут totalStars в StarRating
 import StarRating from "./IconsAction";
 
