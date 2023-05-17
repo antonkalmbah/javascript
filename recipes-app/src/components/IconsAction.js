@@ -7,11 +7,11 @@ const Star = ({ selected = false, onSelect = f => f }) => (
 
 const createArray = length => [...Array(length)];
 
-export default function StarRating({ totalStars = 5 }) {
+export default function StarRating({style = {}, totalStars = 10 }) {
     // useState будет в себе нести значение звёзд по-умолчанию
     const [selectedStars, setSelectedStars] = useState(2); // 
     return (
-        <>
+        <div style={{ ...style }}>
             {createArray(totalStars).map((n, i) => (
                 <Star 
                     key={i} 
@@ -22,6 +22,6 @@ export default function StarRating({ totalStars = 5 }) {
             <p>
                 {selectedStars} of {totalStars} stars
             </p>
-        </>
+        </div>
     );
 }

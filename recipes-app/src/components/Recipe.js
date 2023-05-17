@@ -9,9 +9,15 @@ function Recipe({name, ingredients, steps}) {
         // -------------------- короткий вариант --------------------
         <section id={name.toLowerCase().replace(/ /g, "-")}>
             <h1>{name}</h1>
-            <IngredientsList list={ingredients}/>
-            <Instructions title="Рецепт:" steps={steps}/>
-            <StarRating />
+            <IngredientsList 
+                list={ingredients} 
+            />
+            <Instructions 
+                title="Рецепт:" steps={steps} 
+            />
+            <StarRating 
+                style={{ backgroundColor: "lightgrey" }} 
+            />
         </section>
         // ----------------------------------------------------------
 
