@@ -2,6 +2,30 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./src/components/Icons.js":
+/*!*********************************!*\
+  !*** ./src/components/Icons.js ***!
+  \*********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (/* binding */ Icons)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+
+
+function Icons() {
+  return [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, null)
+  // здесь появляются звёзды рейтинга из IconsAction
+  // данный компонент оставляю в истории для общей справки
+  ];
+}
+
+/***/ }),
+
 /***/ "./src/components/IconsAction.js":
 /*!***************************************!*\
   !*** ./src/components/IconsAction.js ***!
@@ -35,7 +59,7 @@ var Star = function Star(_ref) {
       return f;
     } : _ref$onSelect;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: selected ? "red" : "blue",
+    color: selected ? "red" : "grey",
     onClick: onSelect
   });
 };
@@ -45,13 +69,18 @@ var createArray = function createArray(length) {
 function StarRating(_ref2) {
   var _ref2$totalStars = _ref2.totalStars,
     totalStars = _ref2$totalStars === void 0 ? 5 : _ref2$totalStars;
-  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(3),
-    _useState2 = _slicedToArray(_useState, 1),
-    selectedStars = _useState2[0];
+  // useState будет в себе нести значение звёзд по-умолчанию
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(2),
+    _useState2 = _slicedToArray(_useState, 2),
+    selectedStars = _useState2[0],
+    setSelectedStars = _useState2[1]; // 
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, createArray(totalStars).map(function (n, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Star, {
       key: i,
-      selected: selectedStars > 1
+      selected: selectedStars > i,
+      onSelect: function onSelect() {
+        return setSelectedStars(i + 1);
+      }
     });
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, selectedStars, " of ", totalStars, " stars"));
 }
@@ -180,11 +209,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Instructions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Instructions */ "./src/components/Instructions.js");
 /* harmony import */ var _IngredientsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IngredientsList */ "./src/components/IngredientsList.js");
-/* harmony import */ var _IconsAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IconsAction */ "./src/components/IconsAction.js");
+/* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icons */ "./src/components/Icons.js");
+/* harmony import */ var _IconsAction__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IconsAction */ "./src/components/IconsAction.js");
 
 
 
-// import Icons from "./Icons";
+// Icons был нужен, когда кол-во звёзд было статичным
+
+// StarRating позволяет делать кол-во звёзд программируемым через атрибут totalStars в StarRating
 
 function Recipe(_ref) {
   var name = _ref.name,
@@ -192,6 +224,17 @@ function Recipe(_ref) {
     steps = _ref.steps;
   return (
     /*#__PURE__*/
+    // -------------------- короткий вариант --------------------
+    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
+      id: name.toLowerCase().replace(/ /g, "-")
+    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IngredientsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      list: ingredients
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Instructions__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      title: "Cooking Instructions",
+      steps: steps
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IconsAction__WEBPACK_IMPORTED_MODULE_4__["default"], null))
+    // ----------------------------------------------------------
+
     // -------------------- длинный вариант --------------------
     // <section id="baked-salmon">
     //     <h1>{name}</h1>
@@ -207,16 +250,6 @@ function Recipe(_ref) {
     //         ))}
     //     </section>
     // </section>
-    // ----------------------------------------------------------
-    // -------------------- короткий вариант --------------------
-    react__WEBPACK_IMPORTED_MODULE_0___default().createElement("section", {
-      id: name.toLowerCase().replace(/ /g, "-")
-    }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IngredientsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
-      list: ingredients
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Instructions__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Cooking Instructions",
-      steps: steps
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IconsAction__WEBPACK_IMPORTED_MODULE_3__["default"], null))
     // ----------------------------------------------------------
   );
 }
