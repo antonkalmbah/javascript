@@ -159,7 +159,7 @@ function _extends() { _extends = Object.assign ? Object.assign.bind() : function
 
 function Menu(_ref) {
   var recipes = _ref.recipes;
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "\u0412\u043A\u0443\u0441\u043D\u044B\u0435 \u0440\u0435\u0446\u0435\u043F\u0442\u044B")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("article", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("header", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "\u0421\u043F\u0438\u0441\u043E\u043A \u0440\u0435\u0446\u0435\u043F\u0442\u043E\u0432:")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", {
     className: "recipes"
   }, recipes.map(function (recipe, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Recipe__WEBPACK_IMPORTED_MODULE_1__["default"], _extends({
@@ -203,7 +203,7 @@ function Recipe(_ref) {
     }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, name), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IngredientsList__WEBPACK_IMPORTED_MODULE_2__["default"], {
       list: ingredients
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Instructions__WEBPACK_IMPORTED_MODULE_1__["default"], {
-      title: "Cooking Instructions",
+      title: "\u0420\u0435\u0446\u0435\u043F\u0442:",
       steps: steps
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IconsAction__WEBPACK_IMPORTED_MODULE_3__["default"], null))
     // ----------------------------------------------------------
