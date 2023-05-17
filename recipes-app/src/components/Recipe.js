@@ -1,7 +1,7 @@
 import React from "react";
 import Instructions from "./Instructions";
 import IngredientsList from "./IngredientsList";
-import Icons from "./Icons";
+// import Icons from "./Icons";
 import StarRating from "./IconsAction";
 
 function Recipe({name, ingredients, steps}) {
@@ -28,7 +28,7 @@ function Recipe({name, ingredients, steps}) {
             <h1>{name}</h1>
             <IngredientsList list={ingredients}/>
             <Instructions title="Cooking Instructions" steps={steps}/>
-            <Icons color_1="blue"/>
+            {/* <Icons color_1="blue"/> */}
             <StarRating />
         </section>
         // ----------------------------------------------------------

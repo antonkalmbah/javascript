@@ -2,39 +2,6 @@
 /******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./src/components/Icons.js":
-/*!*********************************!*\
-  !*** ./src/components/Icons.js ***!
-  \*********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Icons)
-/* harmony export */ });
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
-
-
-function Icons(_ref) {
-  var _ref$color = _ref.color,
-    color = _ref$color === void 0 ? "red" : _ref$color;
-  return [/*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: color = "blue"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: color = "blue"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: color = "blue"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: color = "blue"
-  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: color = "blue"
-  })];
-}
-
-/***/ }),
-
 /***/ "./src/components/IconsAction.js":
 /*!***************************************!*\
   !*** ./src/components/IconsAction.js ***!
@@ -48,6 +15,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react_icons_fa__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-icons/fa */ "./node_modules/react-icons/fa/index.esm.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _iterableToArrayLimit(arr, i) { var _i = null == arr ? null : "undefined" != typeof Symbol && arr[Symbol.iterator] || arr["@@iterator"]; if (null != _i) { var _s, _e, _x, _r, _arr = [], _n = !0, _d = !1; try { if (_x = (_i = _i.call(arr)).next, 0 === i) { if (Object(_i) !== _i) return; _n = !1; } else for (; !(_n = (_s = _x.call(_i)).done) && (_arr.push(_s.value), _arr.length !== i); _n = !0); } catch (err) { _d = !0, _e = err; } finally { try { if (!_n && null != _i["return"] && (_r = _i["return"](), Object(_r) !== _r)) return; } finally { if (_d) throw _e; } } return _arr; } }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
 function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
@@ -58,9 +29,14 @@ function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len 
 
 var Star = function Star(_ref) {
   var _ref$selected = _ref.selected,
-    selected = _ref$selected === void 0 ? false : _ref$selected;
+    selected = _ref$selected === void 0 ? false : _ref$selected,
+    _ref$onSelect = _ref.onSelect,
+    onSelect = _ref$onSelect === void 0 ? function (f) {
+      return f;
+    } : _ref$onSelect;
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_icons_fa__WEBPACK_IMPORTED_MODULE_1__.FaStar, {
-    color: selected ? "red" : "blue"
+    color: selected ? "red" : "blue",
+    onClick: onSelect
   });
 };
 var createArray = function createArray(length) {
@@ -68,12 +44,16 @@ var createArray = function createArray(length) {
 };
 function StarRating(_ref2) {
   var _ref2$totalStars = _ref2.totalStars,
-    totalStars = _ref2$totalStars === void 0 ? 1 : _ref2$totalStars;
-  return createArray(totalStars).map(function (n, i) {
+    totalStars = _ref2$totalStars === void 0 ? 5 : _ref2$totalStars;
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(3),
+    _useState2 = _slicedToArray(_useState, 1),
+    selectedStars = _useState2[0];
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement((react__WEBPACK_IMPORTED_MODULE_0___default().Fragment), null, createArray(totalStars).map(function (n, i) {
     return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(Star, {
-      key: i
+      key: i,
+      selected: selectedStars > 1
     });
-  });
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("p", null, selectedStars, " of ", totalStars, " stars"));
 }
 
 /***/ }),
@@ -200,12 +180,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _Instructions__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Instructions */ "./src/components/Instructions.js");
 /* harmony import */ var _IngredientsList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./IngredientsList */ "./src/components/IngredientsList.js");
-/* harmony import */ var _Icons__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./Icons */ "./src/components/Icons.js");
-/* harmony import */ var _IconsAction__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./IconsAction */ "./src/components/IconsAction.js");
+/* harmony import */ var _IconsAction__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./IconsAction */ "./src/components/IconsAction.js");
 
 
 
-
+// import Icons from "./Icons";
 
 function Recipe(_ref) {
   var name = _ref.name,
@@ -237,9 +216,7 @@ function Recipe(_ref) {
     }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Instructions__WEBPACK_IMPORTED_MODULE_1__["default"], {
       title: "Cooking Instructions",
       steps: steps
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_Icons__WEBPACK_IMPORTED_MODULE_3__["default"], {
-      color_1: "blue"
-    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IconsAction__WEBPACK_IMPORTED_MODULE_4__["default"], null))
+    }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(_IconsAction__WEBPACK_IMPORTED_MODULE_3__["default"], null))
     // ----------------------------------------------------------
   );
 }

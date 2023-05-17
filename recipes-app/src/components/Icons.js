@@ -1,13 +1,9 @@
 import React from "react";
 import { FaStar } from "react-icons/fa";
 
-export default function Icons({color = "red"}) {
+export default function Icons() {
     return [
-        <FaStar color={color="blue"} />,
-        <FaStar color={color="blue"} />,
-        <FaStar color={color="blue"} />,
-        <FaStar color={color="blue"} />,
-        <FaStar color={color="blue"} />
+        // здесь появляются звёзды рейтинга из IconsAction
     ]
 }
 
