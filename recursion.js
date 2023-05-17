@@ -36,6 +36,7 @@ const dan = {
 };
 
 const danFunc = (fields, object = {}) => {
+    // ... - оператор распросрания
     const[first, ...remaining] = fields.split(', ');
     return remaining.lenght ? danFunc(remaining.join(', '), object[first]) : object[first];
 };

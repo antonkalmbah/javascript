@@ -16,7 +16,8 @@ function Recipe({name, ingredients, steps}) {
                 title="Рецепт:" steps={steps} 
             />
             <StarRating 
-                style={{ backgroundColor: "lightgrey" }} 
+                style={{ backgroundColor: "lightgrey" }}
+                onDoubleClick={e => alert('Ну и зачем 2 раза нажал? Нужно только 1 раз нажать.')}
             />
         </section>
         // ----------------------------------------------------------

@@ -7,11 +7,14 @@ const Star = ({ selected = false, onSelect = f => f }) => (
 
 const createArray = length => [...Array(length)];
 
-export default function StarRating({style = {}, totalStars = 10 }) {
+// регистрируем атрибуты в функции на установку стилей, кол-ва звёзд и пропсы
+export default function StarRating({style = {}, totalStars = 10, ...props }) {
     // useState будет в себе нести значение звёзд по-умолчанию
-    const [selectedStars, setSelectedStars] = useState(2); // 
+    const [selectedStars, setSelectedStars] = useState(0); 
     return (
-        <div style={{ ...style }}>
+        // указываем, что div будет принимать применяемые стили (они указаны в компоненте Recipe) и доп.
+        // параметры (props)
+        <div style={{ ...style }} {...props}>
             {createArray(totalStars).map((n, i) => (
                 <Star 
                     key={i} 
